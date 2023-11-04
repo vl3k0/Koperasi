@@ -1,14 +1,14 @@
-## Database Koperasi
+# Database Koperasi
 
-#### Nyalakan MariaDB:
+### Nyalakan MariaDB:
 ```shell
-  # Linux
-  sudo systemctl start mariadb
+# Linux
+sudo systemctl start mariadb
 
-  # Windows gak perlu nyalakan 
+# Windows gak perlu nyalakan 
 ```
 
-#### Masuk ke mariadb CLI dan buat database:
+### Masuk ke mariadb CLI dan buat database:
 ```shell
 # Linux
 mariadb -u root
@@ -27,13 +27,13 @@ mariadb -u root
 CREATE DATABASE Koperasi;
 ```
 
-#### Buat user baru
+### Buat user baru
 ```shell
 # Buat user dan password
 CREATE USER 'namamu'@'localhost' IDENTIFIED BY 'password123';
 ```
 
-#### Beri user baru akses ke database
+### Beri user baru akses ke database
 ```sql
 -- Pastikan nama user dan password yang tadi dibuat itu sesuai
 GRANT ALL PRIVILEGES ON Koperasi.* TO 'namamu'@'localhost' IDENTIFIED BY 'password123';
@@ -45,14 +45,14 @@ FLUSH PRIVILEGES;
 exit;
 ```
 
-#### Import data ke database yang tadi
+### Import data ke database yang tadi
 ```shell
 # Saat melakukan ini, anda diminta menginput password yang tadi dibuat
 # Pastikan anda tahu dimana letak file Data_Backup.sql (masa gk tau filesystem route)
 mariadb -u namamu -p Koperasi < ./path/to/file/Data_Backup.sql
 ```
 
-#### Input manual table ke database
+### Input manual table ke database
 Bila belum puas dengan mengimport saja table-table itu, anda bisa menginput manual table yang sudah ada di folder **Table**. Contoh kalau mau menambah table **Jenis_Transaksi**, anda bisa membuka file nya di **Tables/Jenis_Transaksi.sql** lalu copy syntax SQL nya ke mariadb.
 
 ```sql
