@@ -1,5 +1,7 @@
 # Database Koperasi
 
+![ERD](/ERD.jpg)
+
 ### Nyalakan MariaDB:
 ```shell
 # Linux
